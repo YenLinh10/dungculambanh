@@ -1,0 +1,604 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <title>Giới Thiệu</title>
+    <style>
+        :root{
+            --maincolor: #4f2227;
+        }
+        *{
+            padding:0;
+            margin:0;
+            box-sizing: border-box;
+        }
+        html{
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 16px;
+            background: #e2e2e2;
+        }
+        body{
+            width: 1520px;
+            background:white;
+            margin: 0 auto;
+            padding:0 8px;
+        }
+        #navbar{
+            height:30px;
+            background: var(--maincolor); 
+            width: 100%;
+            float: left;
+        }
+        #navbar .left{
+            height: 100%;
+            width: 1200px;
+            display: inline-block;
+            float: left;
+            padding-left: 300px;    
+        }
+        #navbar .left>ul{
+            list-style-type: none;
+            width: 100%;
+            margin-top: 5px;
+        }
+        #navbar .left>ul>li{
+            text-transform: uppercase;
+            color: white;
+            font-size: 0.8rem;
+            float: left;
+        }
+        #navbar .left>ul>li>ul{
+            list-style-type: none;
+            margin-left: 200px;
+        }
+        #navbar .left>ul>li>ul>li{
+            float: left;
+            margin-left:30px;
+        }
+        #navbar .left>ul>li>ul>li>a{
+            color: rgb(218, 210, 210) ;
+            text-decoration: none;
+            font-size: 0.8rem;
+            text-transform: none;
+            float: left;
+        }
+        #navbar .left>ul>li>ul>li:hover >a{
+            color: white;
+        }
+        #navbar .icon{
+            height: 100%;
+            width: 200px;
+            display: inline-block;
+        }
+        #navbar .icon>ul{
+            list-style-type: none;
+            float: left;
+            margin-top: 5px;
+        }
+        #navbar .icon>ul>li{
+            text-transform: uppercase;
+            color: white;
+            float: left;
+            margin-right: 5px;
+        }
+        .fa{ 
+            font-size: 15px;
+            width: 15px;
+            text-align: center;
+            text-decoration: none;
+            color: rgb(218, 210, 210) ;
+        }
+        .fa:hover {
+            opacity: 0.7;
+        }
+        #banner {
+            height: 90px;
+            width: 100%;
+            display: inline-block;
+            background: white;
+        }
+        #banner .photo{
+            height: 100%;
+            width: 300px;
+            margin-top: 10px;
+            float: left;
+            margin-left: 100px;
+            
+        }
+        #banner .photo img{
+            height: 60px;
+            width: 160px;
+            margin-left: 170px;
+        }
+        #banner .dropdown{
+            float: left;
+            margin-left: 250px;
+            margin-top: 20px;
+        }
+        #banner .dropdown select{
+            width: 50px;
+            height: 30px;
+            margin-left: 30px;
+            border: 1px solid rgb(218, 210, 210);
+            font-size: 0.8rem;
+            font-weight: normal;  
+            border-radius: 3px;
+        }
+
+        #banner .search{
+            float:left;
+            width:530px;
+            height:30px;
+            margin-top:20px;
+            background: none;
+            margin-left:0px;
+            border-radius:3px;
+            border: 1px solid rgb(218, 210, 210);
+        }
+        #banner .search input{
+            background:none;
+            margin-left:7px;
+            margin-top:5px;
+            color:white;
+            border:none;
+            display: block;
+            float:left;
+            width: 500px;
+        }
+        #banner .search input:focus{
+            outline: none;
+        }
+        #banner .search span{
+            font-size: 1.2rem;
+            display:block;
+            float:left;
+            margin-top: 4px;
+            color: #4f2227;
+        }
+        #menu2 {
+            height: 50px;
+            width: 100%;
+            background: var(--maincolor);
+        }
+        #menu2 >ul{
+            height: 100%;
+            list-style-type: none;
+            margin-left: 350px;
+        }
+        #menu2 >ul>li{
+            height:100%;
+            float:left;
+            text-align: center;
+            line-height:30px;
+            text-transform: uppercase;
+            font-weight: bold;
+            font-size:0.85rem;
+            padding: 0 10px;
+            position: relative;
+            margin-left: 10px;
+            color: rgb(218, 210, 210);
+            margin-top: 10px;
+        }
+        #menu2>ul>li>a{
+            color:rgb(218, 210, 210);
+            text-decoration: none;
+        }
+        
+        #menu2>ul>li:hover >a{
+            color:white;
+        }
+        #menu2>ul>li>ul{
+            list-style-type:none;
+            width:250px;
+            position: absolute;
+            z-index: 1;
+            left:0;
+            display:none;
+            background:var(--maincolor);
+        }
+        #menu2>ul>li:hover >ul{
+            display:block;
+            padding:8px 0;
+        }
+        #menu2>ul>li>ul>li{
+            font-size:0.9rem;
+            text-transform: none;
+            font-weight: normal;
+            height: 35px;
+            line-height: 35px;
+            background: var(--maincolor);
+            color: white;
+            text-align: left;
+            padding:0 10px;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            position: relative;
+        }
+        #menu2>ul>li>ul>li:hover{
+            color:white;
+            animation: slide 1s;
+        }
+        #menu2>ul>li>ul>li:hover>a{
+            color: black;
+        }
+        #menu2>ul>li>ul>li>a{
+            color:white;
+            text-decoration: none;
+        }
+        @keyframes slide {
+            0%{left:8px;}
+            20%{left:-6.5px;}
+            40%{left:5px;}
+            60%{left:-3.5px;}
+            80%{left:2px;}
+            100%{left:0;}
+        }
+        #content{
+            width: 100%;
+        }
+        #content .gioithieu{
+            width: 1000px;
+            display: block;
+            float: left;
+            font-size: 1.1rem ;
+            margin-left: 300px;
+            margin-top: 5px;
+            color: grey;
+        }
+        #content .inhoa{
+            width: 1000px;
+            float: left;
+            margin-left: 300px ;
+            color: grey;
+            text-transform: uppercase;
+            font-size: 1.1rem;
+            font-weight: bold;
+        }
+        #content .diachi{
+            width: 1000px;
+            float: left;
+            margin-left: 300px;
+        }
+        #content .diachi>ul{
+            list-style-type: none;
+        }
+        #content .diachi>ul>li{
+            font-weight: bold;
+            font-size: 1.1rem;
+            color: grey;
+        }
+        #content .diachi>ul>li>ul{
+            list-style-type: none;
+        }
+        #content .diachi>ul>li>ul>li{
+            font-weight: normal;
+        }
+        #content .anh{
+            width: 100%;
+        }
+        #content .anh>ul{
+            list-style-type: none;
+            margin-left: 300px;
+            position: relative;
+            margin-top: 5px;
+            
+        }
+        #content .anh>ul>li{
+            margin-bottom: 30px;
+            
+        }
+        #ads{
+            height: 1200px;
+            width:100%;
+            background: grey;
+        }
+        #ads .top{
+            height: 50px;
+            width: 100%;
+            margin-left: 300px;
+        }
+        #ads .top>ul{
+            list-style-type: none;
+            float: left;
+        }
+        #ads .top>ul>li{
+            width: 200px;
+            text-transform: uppercase;
+            text-decoration: none;
+            color: rgb(247, 235, 235);
+            font-weight: bold;
+            font-size: 1.1rem;
+            float: left;
+            margin-right: 50px;
+            margin-top: 20px;
+        }
+        #ads .bottom{
+            height: 1150px;
+            width: 100%; 
+            float: left;
+            margin-left: 300px;
+            color: rgb(247, 235, 235);
+        }
+        #ads .bottom>ul{
+            list-style-type: none;
+            height: 100%;
+        }
+        #ads .bottom>ul>li{
+            height: 100%;
+            width: 200px;
+            font-size: 1.1rem;
+            margin-right: 50px;
+            margin-top: 20px;
+            float: left;
+        }
+        #ads .bottom>ul>li>ul{
+            list-style-type: none;
+        }
+        #ads .bottom>ul>li>ul>li>a{
+            text-decoration: none;
+            color:rgb(247, 235, 235);
+            font-size: 1.1rem;
+            float: left;
+            font-weight: bold;
+        }
+        #footer{
+            height: 100px;
+            width: 100%;
+            background: rgb(59, 59, 59);
+        }
+        #footer .top{
+            height: 50px;
+            width: 100%;
+            float: left;
+            margin-left: 300px;
+        }
+        #footer .top>ul{
+            list-style-type: none;
+        }
+        #footer .top>ul>li{
+            float:left;
+            height: 100%;
+            font-size:0.8rem;
+            margin-right:30px;
+            margin-top: 10px;
+        }
+        #footer .top>ul>li>a{
+            text-decoration: none;
+            color:rgb(129, 129, 129);
+            font-size: 1rem;
+            font-weight: bold;
+        }
+        #footer .copy{
+            height: 50px;
+            width: 100%;
+            float: left;
+            margin-left: 300px;
+            color:rgb(129, 129, 129);
+            font-size: 1rem;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div id="navbar">
+        <div class="left">
+            <ul>
+                <li>Chào Mừng Quý Khách</li>
+                <li>
+                    <ul>
+                        <li><a href="">Giới Thiệu</a></li>
+                        <li><a href="">Chính Sách Giao Hàng</a></li>
+                        <li><a href="">Tin Tức</a></li>
+                        <li><a href="">Học Làm Bánh</a></li>
+                        <li><a href="">Liên Hệ</a></li>    
+                    </ul>
+                </li>
+            </ul>
+        </div>
+        <div class="icon">
+            <ul>
+                <li><a href="#" class="fa fa-facebook"></a></li>
+                <li><a href="#" class="fa fa-instagram"></a></li>
+                <li><a href="#" class="fa fa-twitter"></a></li>
+                <li><a href="#" class="fa fa-youtube"></a></li>
+            </ul>
+        </div>   
+    </div>
+    <div id="banner">
+        <div style="width:200px;height:200px;" class="photo"><img src="logo.png" alt=""></div>
+        <div class="dropdown">
+            <select onclick="all">
+                <option>All</option>
+                <option>Bột Mama's Choice</option>
+                <option>Bột Trộn Sẵn Fancy</option>
+                <option>Dụng Cụ Làm Bánh</option>
+                <option>Hộp Nhựa - Hộp Giấy - Ly Nhựa - Ly Giấy</option>
+                <option>Kem Trang Trí Bánh</option>
+                <option>Khay Kệ Đựng Bánh - Trang Trí Bánh - Phụ Kiện</option>
+                <option>Khuôn Bánh</option>
+                <option>Màu Nước Thực Phẩm Kalor NHất Hương</option>
+                <option>Nguyên Liệu Làm Bánh</option>
+                <option>Nguyên Liệu Làm Bánh Nhất Hương</option>
+                <option>Sô Cô La Cacao Talk Nhất Hương</option>
+            </select>
+        </div>
+        <div class="search">
+            <input type="text" placeholder="Tìm kiếm...">
+            <span class="glyphicon glyphicon-search"></span>
+        </div>
+    </div>
+    <div id="menu2">
+        <ul>
+            <li><a href="http://127.0.0.1:5500/BTL.HTML">Trang chủ</a></li>
+            <li><a href="https://dungculambanh.com.vn/san-pham/">Sản Phẩm</a></li>
+            <li><a href="https://dungculambanh.com.vn/cac-loai-san-pham/dung-cu-lam-banh">Dụng cụ làm bánh</a>
+                <ul>
+                    <li><a href="https://dungculambanh.com.vn/cac-loai-san-pham/dung-cu-lam-banh/can-dien-tu-may-moc/">Cân Điện Tử - Máy Móc</a></li>
+                    <li><a href="">Khuôn Sứ - Khuôn Pudding</a></li>
+                    <li><a href="">Đồ Dùng Trong Nhà Bếp</a></li>
+                    <li><a href="">Cây Đánh Trứng - Cây Cán Bột - Muỗng Xúc Kem</a></li>
+                </ul>
+            </li>
+            <li><a href="https://dungculambanh.com.vn/cac-loai-san-pham/nguyen-lieu-lam-banh">Nguyên liệu làm bánh</a>
+                <ul>
+                    <li><a href="">Bột Panna Cotta - Bánh Mouse</a></li>
+                    <li><a href="">Nguyên Liệu Tổng Hợp</a></li>
+                    <li><a href=""> Cream Cheese - Pho Mai Trứng Muối</a></li>
+                    <li><a href="">Bột Khô Làm Bánh</a></li>
+                    <li><a href="">Bột Trộn Sẵn Fancy</a></li>
+                </ul>
+            </li>
+            <li><a href="https://dungculambanh.com.vn/cac-loai-san-pham/trang-tri/">Trang trí bánh</a>
+                <ul>
+                    <li><a href="">Kệ - Khay Đựng Bánh</a></li>
+                    <li><a href="">Trang Trí Bánh Kem - Bánh Ngọt</a></li>
+                </ul>
+            </li>
+            <li><a href="https://dungculambanh.com.vn/lien-he/">Liên hệ</a></li>
+        </ul>
+    </div>
+    <div id="content">
+        <div class="gioithieu">
+            <p>Siêu Thị Ngành Bánh Bakers’ Mart Nhất Hương là một trong những siêu thị đầu tiên chuyên cung cấp máy móc, thiết bị, dụng cụ và nguyên phụ liệu làm bánh do Công Ty Tân Nhất Hương mở ra và bắt đầu đi vào hoạt động từ đầu năm 2011. Có thể nói đây là một trong những siêu thị chuyên ngành về các dụng cụ, trang thiết bị và nguyên vật liệu ngành bánh đầu tiên ở TPHCM nói riêng và cả nước nói chung dành cho người học làm bánh, các tiệm bánh và khách hàng đam mề ngành bánh . Siêu Thị Ngành Bánh Bakers’ Mart Nhất Hương, siêu thị dụng cụ làm bánh chuyên cung cấp máy móc, thiết bị, vật liệu và nguyên liệu làm bánh</p>
+            <p>Siêu Thị Ngành Bánh Bakers’ Mart Nhất Hương là 1 phần của công ty Nhất Hương, với 20 năm kinh nghiệm trong ngành bánh, Nhất Hương là sự lựa chọn uy tín và đảm bảo cho quý khách hàng mua sắm các dụng cụ làm bánh và nguyên liệu làm bánh chất lượng.</p>
+            <img style="width:900px;height:400px" src="gioi-thieu-sieu-thi-nganh-banh-bakers-mart-nhat-huong-8.jpg" alt="">
+            <p>Với hơn 5000 mặt hàng phục vụ cho ngành bánh, Bakers’ Mart tạo điều kiện thuận lợi cho các tiệm bánh cũng như các thợ làm bánh gia đình có thể sản xuất và chế biến hàng trăm loại bánh khác nhau. Với Slogan “Baker’s Fantasy”, Bakers’ Mart mở ra giúp những người đam mê với nghề bánh có thể tìm thấy những dụng cụ từ bé nhỏ, đơn giản đến phức tạp. Chính những dụng cụ này có thể biến hóa nguyên liệu kem, Chocolate thành những hình hoa, thú… ngộ nghĩnh, sống động, dễ thương và công nghệ trang trí chuyên nghiệp này sẽ góp phần tạo nên giá trị của những chiếc bánh.</p>
+            <p>Bên cạnh đó siêu thị còn cung cấp các loại kệ, ly, tách, muỗng, những bộ đồng phục nhà bếp chuyên nghiệp đạt tiêu chuẩn của khách sạn 5 sao.</p>
+            <p>Bakers’ Mart sẽ không ngừng nâng cao hệ thống cũng như chất lượng phục vụ nhằm ngày càng thỏa mãn nhu cầu của khách hàng.</p>
+        </div>
+        <div class="inhoa">
+            <p>NHẤT HƯƠNG THÀNH THẬT XIN LỖI QUÝ KHÁCH HÀNG VÌ SỰ CHẬM TRỄ XỬ LÝ ĐƠN. DO DỊCH COVID PHỨC TẠP NÊN MONG QUÝ KHÁCH THÔNG CẢM VÀ ĐỢI GIÚP BÊN AD XỬ LÝ ĐƠN HÀNG THEO THỨ TỰ Ạ. CHÚC QUÝ KHÁCH SỨC KHỎE VÀ BÌNH AN Ạ</p>
+            <p>♥♥ ĐỂ ĐẶT HÀNG ONLINE GIAO HÀNG , QUÝ KHÁCH VUI LÒNG ĐẶT HÀNG TRÊN WEBSITE : https://dungculambanh.com.vn/ HOẶC SỐ ĐIỆN THOẠI HOTLINE 0917.569.091 – 0969.200.610 – 0389.434.967. ( 8h- 20h30) ♥♥</p>
+        </div>
+        <div class="diachi">
+            <ul>
+                <li>♥ ♥ Siêu Thị Ngành Bánh Bakers’ Mart HCM:
+                    <ul>
+                        <li> ĐC 1: Lầu 2, 3 ,4 – 61A Trần Quang Diệu Nối Dài – Phường 13- Quận 3 – TP.HCM</li>
+                        <li>ĐT: 028.6290.3756( Lầu 2 – Bao Bì + Hộp Giấy ) – 02862903746(Lầu 3- Đồ Trang Trí ) – 028.6290.3738( Lầu 4- Nguyên Liệu) hoặc hotline 0961.035.435 ( zalo)</li>
+                        <li>Email: info@dungculambanh.com.vn</li>
+                        <li>Giờ mở cửa: thứ 2-7 từ 8h – 20h30 , chủ nhật từ 8h – 17h00</li>
+                    </ul>
+                </li>
+                <li>♥♥ Siêu Thị Ngành Bánh Bakers’ Mart HCM TKTQ:
+                    <ul>
+                        <li>ĐC: Lầu 2, 155 Tân Kỳ Tân Quý, P. Tân Sơn Nhì, Q. Tân Phú</li>
+                        <li>ĐT: 028.38120.222 </li>
+                        <li>Fax: 02862678913</li>
+                        <li>Email: info@dungculambanh.com.vn</li>
+                        <li>Giờ mở cửa: thứ 2-7 từ 8h – 20h30 , chủ nhật từ 8h – 17h00</li>
+                    </ul>
+                </li>
+                <li>♥♥ Mọi thắc mắc đơn hàng đã đặt trên website vui lòng gọi vào số:  028.3842.8136 hoặc 0917.569.091 -zalo (trong giờ hành chính) – RIÊNG ĐƠN HÀNG KHU VỰC HÀ NỘI GỌI SỐ HOTLINE  0973037360 . XIN CẢM ƠN Ạ ♥♥</li>
+            </ul>
+        </div>
+        <div class="anh">
+            <ul>
+                <li><img style="width:900px;height:400px" src="sieu-thi-dung-cu-lam-banh-021.jpg" alt=""></li>
+                <li><img style="width:900px;height:400px" src="sieu-thi-dung-cu-lam-banh-171.jpg" alt=""></li>
+                <li><img style="width:900px;height:400px" src="sieu-thi-dung-cu-lam-banh-231.jpg" alt=""></li>
+                <li><img style="width:900px;height:400px" src="sieu-thi-dung-cu-lam-banh-241.jpg" alt=""></li>
+                
+            </ul>
+        </div>
+    </div>
+    <div id="ads">
+        <div class="top">
+            <ul>
+                <li>Địa chỉ Hà Nội</li>
+                <li>Địa chỉ Hồ Chí Minh</li>
+                <li>Website thành viên</li>
+                <li>Thông tin</li>
+            </ul>
+        </div>
+        <div class="bottom">
+            <ul>
+                <li>
+                    <ul>
+                        <li>
+                            <p><b>Mọi thắc mắc của đơn hàng đã được đặt trên website thuộc các quận Thủ Đức, Phú Nhuận, Bình Thạnh, Quận 9, Quận 2, Quận 1, Quận 3 liên hệ số hotline:</b> 0961.035.435 (zalo) 028.6290.3738 <b>để giao hàng</b>.Xin cảm ơn </p>
+                        </li>
+                        <li>
+                            <p><b>Mọi thắc mắc đơn hàng của các quận còn lại đã được đặt trên website + đặt đơn online vui lòng gọi vào số:</b> HCM: 0917.569.091 - 0389.434.967 (zalo). Xin cảm ơn </p>
+                        </li>
+                        <li>
+                            <p><b> Mọi thắc mắc đơn hàng của Hà Nội:</b> 024.62 62 62 16 – 0973037360 (có thể liên hệ qua zalo) (từ 8h-20h). Xin Cảm ơn</p>
+                        </li>
+                        <li>
+                            <p><b>Cơ Sở Liên Kết Hà Nội – Cầu Giấy: </b>                                Số 2B Lê Đức Thọ – Phường Mai Dịch – Q Cầu Giấy | 024.62 62 62 16 – 024.62.62.62.15 - Hotline: 0973.037.360 (zalo)
+                                 Giờ mở cửa: 8h-17h (thứ 2 đến thứ 7, 8h-17h (chủ nhật)
+                            </p>
+                        </li>
+                        <li>
+                            <p><b>Cơ Sở Liên Kết Hà Nội – Thịnh Hào:</b> Số 43, ngõ Thịnh Hào 1, đường Tôn Đức Thắng, Phường Hàng Bột, Quận Đống Đa | 024 73048111 – Hotline:0918.095.539 (zalo)
+                                Giờ mở cửa: 8h-17h (thứ 2 đến thứ 7), 8h-17h (chủ nhật)</p>
+                        </li>
+                    </ul>              
+                </li>
+                <li>
+                     <ul>
+                        <li>        
+                            <p><b>Cơ Sở Liên Kết Q3:</b>
+                            <br>Địa chỉ : 61A- Trần Quang Diệu - P13- Quận 3.
+                            <br>Lầu 2 - Bao Bì + Hộp Giấy 028.6290.3756
+                            <br>Lầu 3 - Đồ Trang Trí: 02862903746
+                            <br>Lầu 4- Nguyên Liệu: 028.6290.3738 hoặc hotline 0961.035.435 ( zalo))</p>                        </li>
+                        <li>
+                            <p><b>Cơ Sở Liên Kết Q7:</b>
+                            <br>Lầu 2 – 21 Nguyễn Thị Thập, P. Tân Phú, Q7 - 028.6298.9725 – 028.6298.9726
+                                Hotline : 0961.06.07.60 ( zalo)- ( Toà nhà văn phòng phía trên quán cafe O’Hara, đi vào hẻm của quán)
+                            </p>
+                        </li>
+                        <li>
+                            <p><b>Cơ Sở Liên Kết Tân Phú:</b>
+                            <br>Lầu 2, 155 Tân Kỳ Tân Quý, P. Tân Sơn Nhì, Q. Tân Phú Điện Thoại: 028.38120.222
+                            </p>
+                        </li>
+                        <li>
+                            <p><b>Giờ mở cửa:</b> Thứ 2-7 từ 8h – 20h30, Chủ nhật từ 8h – 17h00</p>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <ul>
+                        <li><a href="">Dụng cụ Bartender, Dụng Cụ Barisa</a></li>
+                        <li><a href="">Kem Trang Trí Bánh</a></li>
+                        <li><a href="">Máy Làm Bánh</a></li>
+                        <li><a href="">Cuộc Thi Vô Địch Barista Việt Nam -VNSBC</a></li>                            <li><a href="">Dụng Cụ Làm Bánh</a></li>
+                        <li><a href="">Học Làm Bánh Chuyên Nghiệp</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <ul>
+                        <li>
+                            Cơ Sở Ngọc Hương: 61 Trần Quang Diệu, P. 13, Q. 3, Hồ Chí Minh
+                        </li>
+                        <li>Giấy phép kinh doanh số: 41C8002646 - SĐT: 02839313644.</li>
+                         <li>Mã số thuế:0302064722</li>
+                        <li><a href="">Chính sách đổi trả hàng</a></li>
+                        <li><a href="">Chính sách giao hàng</a></li>
+                        <li><a href="">Chính sách bảo mật</a></li>
+                    </ul>
+            </li>
+            </ul>
+        </div>
+    </div>     
+    <div id="footer">
+        <div class="top">
+            <ul>
+                <li><a href="">Giới thiệu</a></li>
+                <li><a href="">Chính sách giao hàng</a></li>
+                <li><a href="">Tin tức</a></li>
+                <li><a href="">Học làm bánh</a></li>
+                <li><a href="">Liên Hệ</a></li>
+            </ul>
+        </div>
+    <div class="copy">Copyright 2021 &#169</div>
+    </div>
+</body>
+</html>
